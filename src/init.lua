@@ -7,6 +7,7 @@
 ---- Services ----
 
 local RunService = game:GetService("RunService")
+local QuickSetupUtility = require(Utility.QuickSetup)
 local Players = game:GetService("Players")
 
 ---- Imports ----
@@ -28,6 +29,13 @@ do
 		CharactersFolder = Instance.new("Folder", workspace)
 		CharactersFolder.Name = Settings.CharactersFolder
 	end
+end
+
+--> Optional quick setup
+do
+    if Settings.EnableQuickSetup and IS_SERVER then
+        QuickSetupUtility.Run()
+    end
 end
 
 local Dispatcher = require(script.Dispatcher)
