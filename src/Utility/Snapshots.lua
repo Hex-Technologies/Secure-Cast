@@ -52,7 +52,7 @@ export type Orientations = {
 
 local Module = {}
 local Snapshots: {Snapshot} = table.create(60)
-local Characters: Folder = workspace[Settings.CharacterFolder]
+local Characters: Folder = workspace:FindFirstChild(Settings.CharacterFolder)
 
 ---- Variables ----
 
